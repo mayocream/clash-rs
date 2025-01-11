@@ -1,3 +1,27 @@
+use std::path::PathBuf;
+
+use clap::{Parser, Subcommand};
+
+#[derive(Parser)]
+struct Cli {
+    #[arg(short, long, value_name = "FILE")]
+    config: Option<PathBuf>,
+
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    Validate,
+}
+
 fn main() {
-    println!("Hello, world!");
+    let cli = Cli::parse();
+    match &cli.command {
+        Some(Commands::Validate) => {
+            println!("Validating config file: {:?}", cli.config);
+        }
+        None => {}
+    }
 }
