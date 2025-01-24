@@ -3,7 +3,7 @@ use std::path::PathBuf;
 
 #[derive(Parser)]
 struct Cli {
-    #[arg(short, long, value_name = "FILE")]
+    #[arg(short = 'f', long = "config", value_name = "FILE")]
     config: Option<PathBuf>,
 
     #[command(subcommand)]
