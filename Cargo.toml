@@ -3,7 +3,7 @@ name = "clash"
 description = "Rule-based proxy client in Rust"
 version = "0.1.0"
 edition = "2021"
-license = "GPL-3.0"
+license-file = "LICENSE"
 
 [dependencies]
 clap = { version = "4.5.26", features = ["derive", "env"] }
